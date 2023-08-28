@@ -45,4 +45,4 @@ else:
     st.error("ファイルをアップロードしてください。")
 
 # Copyright
-st.markdown('Thank You For Using')
+st.markdown('Thank You for Using')
