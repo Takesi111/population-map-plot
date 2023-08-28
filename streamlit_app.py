@@ -43,3 +43,4 @@ if uploaded_file:
     st.pydeck_chart(pdk.Deck(map_style="mapbox://styles/mapbox/light-v9",layers=[layer],initial_view_state=view_state))
 else:
     st.error("ファイルをアップロードしてください。")
+    st.write("ファイルをアップロードしてください。")
