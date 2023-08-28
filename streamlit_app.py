@@ -37,7 +37,7 @@ if uploaded_file:
         line_width_min_pixels=1,
         get_position=["longitude","latitude"],
         get_radius="population",
-        get_fill_color=[150,100,0],
+        get_fill_color=[150,0,0],
         get_line_color=[0,0,0],
     )
     st.pydeck_chart(pdk.Deck(map_style="mapbox://styles/mapbox/light-v9",layers=[layer],initial_view_state=view_state))
