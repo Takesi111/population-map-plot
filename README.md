@@ -1,4 +1,4 @@
-# population-map-plot
+# 人口分布可視化アプリ
 
 ## 概要
 CSVやExcelファイルから、地図にプロットができるWebアプリケーションです。
