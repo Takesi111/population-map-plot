@@ -19,8 +19,8 @@ if uploaded_file:
         df=pd.read_excel(uploaded_file)
     
     view_state=pdk.ViewState(
-        latitube=df["latitude"].mean(),
-        langitude=["langitude"].mean(),
+        latitude=df["latitude"].mean(),
+        langitude=["longitude"].mean(),
         zoom=10,
         pitch=0,
     )
