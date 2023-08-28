@@ -24,3 +24,22 @@ if uploaded_file:
         zoom=10,
         pitch=0,
     )
+    layer=pdk.Layer(
+        "ScatterplotLayer",
+        df,
+        pickable=True,
+        opacity=0.6,
+        stroked=True,
+        Filled=True,
+        radius_scale=1,
+        radius_min_pixels=10,
+        radius_max_pixels=100,
+        line_width_min_pixels=1,
+        get_position=["longitude","latitude"],
+        get_radius="population",
+        get_fill_color=[0,0,255],
+        get_line_color=[0,0,0],
+    )
+    st.pydeck_chart(pdk.Deck(map_style="mapbox://styles/mapbox/light-v9",layers=[later],initial_view_staet=view_state))
+else:
+    st.error("ファイルをアップロードしてください。")
