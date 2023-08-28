@@ -7,10 +7,12 @@ st.set_page_config(page_title="人口分布可視化アプリ", layout="wide")
 
 # タイトルを設定
 st.title('人口分布可視化アプリ')
-
 st.caption("Created by Ryota Kawamura")
 
+# サンプルデータのダウンロードボタンの表示
+st.download_button("サンプルのCSVをダウンロード", "sample_data.csv", "sample_data.csv")
 
+# ファイルのアップロード
 uploaded_file=st.file_uploader("ファイルをアップロードしてください (CSV or Excel)", type=["csv","xlsx"])
 if uploaded_file:
     if uploaded_file.name.endswith('.csv'):
@@ -18,12 +20,15 @@ if uploaded_file:
     elif uploaded_file.name.endswith('.xlsx'):
         df=pd.read_excel(uploaded_file)
     
+    # 初期位置変数の設定
     view_state=pdk.ViewState(
         latitude=df["latitude"].mean(),
         longitude=df["longitude"].mean(),
         zoom=10,
         pitch=0,
     )
+    
+    # 表示の設定
     layer=pdk.Layer(
         "ScatterplotLayer",
         df,
@@ -40,9 +45,11 @@ if uploaded_file:
         get_fill_color=[150,0,0],
         get_line_color=[0,0,0],
     )
+
+    # 地図の表示
     st.pydeck_chart(pdk.Deck(map_style="mapbox://styles/mapbox/light-v9",layers=[layer],initial_view_state=view_state))
 else:
     st.write("ファイルをアップロードしてください。")
 
-# Copyright
+# 謝辞
 st.markdown('Thank You for Using!')
