@@ -11,4 +11,4 @@ st.title('人口分布可視化アプリ')
 st.caption("Created by Ryota Kawamura")
 
 
-uploaded_file=st.file_uploader("ファイルをアップロードしてください (CSV or Excel)", type=["csv","xlsx])
+uploaded_file=st.file_uploader("ファイルをアップロードしてください (CSV or Excel)", type=["csv","xlsx"])
