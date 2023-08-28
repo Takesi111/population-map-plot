@@ -1,11 +1,12 @@
 # Streamlitライブラリをインポート
 import streamlit as st
+import pandas as pd
 
 # ページ設定（タブに表示されるタイトル、表示幅）
-st.set_page_config(page_title="タイトル", layout="wide")
+st.set_page_config(page_title="人口分布可視化アプリ", layout="wide")
 
 # タイトルを設定
-st.title('Streamlitのサンプルアプリ')
+st.title('人口分布可視化アプリ')
 
 # テキスト入力ボックスを作成し、ユーザーからの入力を受け取る
 user_input = st.text_input('あなたの名前を入力してください')
