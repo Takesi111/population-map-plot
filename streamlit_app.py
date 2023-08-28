@@ -40,6 +40,6 @@ if uploaded_file:
         get_fill_color=[0,0,255],
         get_line_color=[0,0,0],
     )
-    st.pydeck_chart(pdk.Deck(map_style="mapbox://styles/mapbox/light-v9",layers=[later],initial_view_staet=view_state))
+    st.pydeck_chart(pdk.Deck(map_style="mapbox://styles/mapbox/light-v9",layers=[layer],initial_view_state=view_state))
 else:
     st.error("ファイルをアップロードしてください。")
