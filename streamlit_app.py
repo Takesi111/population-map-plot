@@ -16,4 +16,11 @@ if uploaded_file:
     if uploaded_file.name.endswith('.csv'):
         df=pd.read_csv(uploaded_file)
     elif uploaded_file.name.endswith('.xlsx'):
-        df=pd.read_excel(uploaded_file)    
+        df=pd.read_excel(uploaded_file)
+    
+    view_state=pdk.ViewState(
+        latitube=df["latitude"].mean(),
+        langitude=["langitude"].mean(),
+        zoom=10,
+        pitch=0,
+    )
