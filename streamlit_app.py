@@ -20,7 +20,7 @@ if uploaded_file:
     
     view_state=pdk.ViewState(
         latitude=df["latitude"].mean(),
-        longitude=["longitude"].mean(),
+        longitude=df["longitude"].mean(),
         zoom=10,
         pitch=0,
     )
