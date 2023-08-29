@@ -10,8 +10,9 @@ st.title('人口分布可視化アプリ')
 st.caption("Created by Ryota Kawamura")
 
 # サンプルデータのダウンロードボタンの表示
-st.download_button("サンプルのCSVをダウンロード", "sample_data.csv", "sample_data.csv")
-
+data = pd.read_csv("sample_data.csv")
+st.download_button("サンプルのCSVをダウンロード",data=data.to_csv(index=False),
+ file_name="sample_data.csv",)
 # ファイルのアップロード
 uploaded_file=st.file_uploader("ファイルをアップロードしてください (CSV or Excel)", type=["csv","xlsx"])
 if uploaded_file:
