@@ -37,7 +37,7 @@ if uploaded_file:
         opacity=0.6,
         stroked=True,
         Filled=True,
-        radius_scale=1,
+        radius_scale=0.3,
         radius_min_pixels=10,
         radius_max_pixels=100,
         line_width_min_pixels=1,
